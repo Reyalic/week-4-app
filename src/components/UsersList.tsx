@@ -22,7 +22,7 @@ const UserList = (props: Props) => {
     }
 
     return (
-        <div>
+        <div className='card-container'>
             {cards.map(formatCard)}
         </div>
     )

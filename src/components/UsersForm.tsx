@@ -36,7 +36,7 @@ const UsersForm = (props: Props) => {
     }
 
     return (
-        <form>
+        <form className='form-container'>
             <input ref={refFirstName} type='text' placeholder='Name' name='name' id='name' required pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ]+' />
             <input ref={refLastName} type='text' placeholder='Last Name' name='last-name' id='last-name' required pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ]+' />
             <input ref={refEmail} type='email' placeholder='Email' name='email' id='email' required />

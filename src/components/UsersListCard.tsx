@@ -120,7 +120,7 @@ const UsersListCard = (props: Props) => {
     }
 
     return (
-        <div>
+        <div className='cards'>
             <h2>{capitalize(user.first_name + ' ' + user.last_name)}</h2>
             <ul>
                 {
@@ -139,8 +139,8 @@ const UsersListCard = (props: Props) => {
                         </>
                 }
             </ul>
-            <button onClick={deleteCard}><FontAwesomeIcon icon={faTrash} /></button>
-            <button onClick={editCard}><FontAwesomeIcon icon={faPen} /></button>
+            <button className='delete-button' onClick={deleteCard}><FontAwesomeIcon icon={faTrash} /></button>
+            <button className='edit-button' onClick={editCard}><FontAwesomeIcon icon={faPen} /></button>
         </div>
     )
 }

@@ -1,0 +1,9 @@
+input {
+    &:invalid {
+        border-color: red;
+    }
+
+    &:valid {
+        border-color: green;
+    }
+}

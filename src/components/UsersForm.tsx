@@ -38,12 +38,13 @@ const UsersForm = (props: Props) => {
     return (
         <div className='form-container-container'>
             <form className='form-container'>
+                <h2>Create a new user</h2>
                 <input ref={refFirstName} type='text' placeholder='Name' name='name' id='name' required pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ]+' />
                 <input ref={refLastName} type='text' placeholder='Last Name' name='last-name' id='last-name' required pattern='[a-zA-ZáéíóúÁÉÍÓÚñÑ]+' />
                 <input ref={refEmail} type='email' placeholder='Email' name='email' id='email' required />
-                <input ref={refPassword} type='text' placeholder='Password' name='password' id='password' required pattern='\w+' />
+                <input ref={refPassword} type='password' placeholder='Password' name='password' id='password' required pattern='\w+' />
                 <input ref={refBirthday} type='date' name='birthday' id='birthday' required />
-                <input className='form-button' type='submit' onClick={submit} value='Submit' />
+                <input className='form-button' type='submit' onClick={submit} value='Upload' />
             </form>
         </div>
     );

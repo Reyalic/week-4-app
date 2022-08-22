@@ -1,5 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap');
 
+@mixin for-size($size) {
+    @if $size ==phone-only {
+        @media (max-width: 599px) {
+            @content;
+        }
+    }
+
+    @else if $size ==tablet-portrait-up {
+        @media (min-width: 600px) {
+            @content;
+        }
+    }
+
+    @else if $size ==tablet-landscape-up {
+        @media (min-width: 900px) {
+            @content;
+        }
+    }
+
+    @else if $size ==desktop-up {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+
+    @else if $size ==big-desktop-up {
+        @media (min-width: 1800px) {
+            @content;
+        }
+    }
+}
+
 input {
     &:invalid {
         border-color: red;
@@ -14,6 +46,7 @@ body {
     background-color: rgb(32, 32, 32);
     color: #ffffff;
     font-family: 'Sarabun', sans-serif;
+    padding-top: 90px;
 }
 
 .App {
@@ -22,6 +55,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .Header {
     width: 100%;
     background-color: #262626;
@@ -29,6 +63,12 @@ body {
     top: 0;
     text-align: center;
 }
+
+.form-container-container {
+    display: flex;
+    justify-content: center;
+}
+
 .form-container {
     width: 250px;
     display: flex;
@@ -37,6 +77,7 @@ body {
     padding: 25px;
     box-shadow: 0 0 3px 3px #181818;
 }
+
 .form-container input {
     margin: 10px;
     border: none;
@@ -44,34 +85,41 @@ body {
     padding: 8px;
     border-radius: 5px;
 }
-.card-container{
+
+.card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .cards {
-    width: 400px;
+    @include for-size(tablet-portrait-up) {
+        width: 400px;
+    }
+
     background-color: rgb(27, 27, 27);
     margin: 30px;
     padding: 35px;
     border-radius: 10px;
     transition: 0.5s;
 }
+
 .cards:hover {
-    box-shadow: 17px 25px 13px 7px rgba(18,18,18,0.68);
-    -webkit-box-shadow: 17px 25px 13px 7px rgba(18,18,18,0.68);
-    -moz-box-shadow: 17px 25px 13px 7px rgba(18,18,18,0.68);
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);  
+    box-shadow: 17px 25px 13px 7px rgba(18, 18, 18, 0.68);
+    -webkit-box-shadow: 17px 25px 13px 7px rgba(18, 18, 18, 0.68);
+    -moz-box-shadow: 17px 25px 13px 7px rgba(18, 18, 18, 0.68);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
     transform: translateY(-30px);
 }
+
 .cards ul {
     list-style: none;
     padding: 0;
 }
-.cards button {
-   
-}
+
+.cards button {}
+
 .Footer {
     width: 100%;
     position: fixed;
@@ -80,6 +128,7 @@ body {
     justify-content: center;
     border-top: 1px solid#ffffff;
 }
+
 .Footer h3 {
-    padding: 30px;
+    padding: 5px;
 }

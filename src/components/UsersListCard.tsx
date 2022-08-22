@@ -139,8 +139,10 @@ const UsersListCard = (props: Props) => {
                         </>
                 }
             </ul>
-            <button className='delete-button' onClick={deleteCard}><FontAwesomeIcon icon={faTrash} /></button>
-            <button className='edit-button' onClick={editCard}><FontAwesomeIcon icon={faPen} /></button>
+            <div className='buttons-container'>
+                <button className='delete-button' onClick={deleteCard}><FontAwesomeIcon icon={faTrash} /></button>
+                <button className='edit-button' onClick={editCard}><FontAwesomeIcon icon={faPen} /></button>
+            </div>
         </div>
     )
 }

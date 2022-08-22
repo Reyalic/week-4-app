@@ -43,7 +43,7 @@ const UsersForm = (props: Props) => {
                 <input ref={refEmail} type='email' placeholder='Email' name='email' id='email' required />
                 <input ref={refPassword} type='text' placeholder='Password' name='password' id='password' required pattern='\w+' />
                 <input ref={refBirthday} type='date' name='birthday' id='birthday' required />
-                <input type='submit' onClick={submit} value='Submit' />
+                <input className='form-button' type='submit' onClick={submit} value='Submit' />
             </form>
         </div>
     );

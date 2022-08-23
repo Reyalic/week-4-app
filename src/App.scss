@@ -4,6 +4,9 @@
     @if $size ==phone-only {
         @media (max-width: 599px) {
             @content;
+            .cards {
+                min-width: 200px;
+            }
         }
     }
 
